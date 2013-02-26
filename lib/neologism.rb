@@ -3,6 +3,6 @@ require "neologism/generator"
 
 module Neologism
   def self.generate
-    Generator.new.generate
+    Generator.factory.generate
   end
 end
