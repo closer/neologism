@@ -1,0 +1,2 @@
+require "rubyems"
+require "neologism"
