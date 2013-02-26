@@ -1,37 +1,28 @@
 module Neologism
   class Generator
-    def self.factory *args
-      new *args
+    @@prefixes   ||= %w|un in|
+    @@suffixes   ||= %w|ed|
+    @@vowels     ||= %w|b c d f g h j k l m n p q r s t v w x y z| + %w|ch ck|
+    @@consonants ||= %w|a e i o u | + %w|ea oa er|
+
+    def initialize
+      @generated = nil
     end
 
-    def initialize length=nil
-      @length = length || (rand(5) + 2)
-    end
-
-    def generate
-      @length.times.map { syllable }.join
+    def generate length = rand(5)
+      @generated = prefix + length.times.map { syllable }.join + suffix
     end
 
     def prefix
-    end
-
-    def suffix
+      @@prefixes[rand(@@prefixes.size)]
     end
 
     def syllable
-      vowels[rand(vowels.size)] + consonants[rand(consonants.size)]
+      @@vowels[rand(@@vowels.size)] + @@consonants[rand(@@consonants.size)]
     end
 
-    def vowels
-      @@vowels ||= %w|b c d f g h j k l m n p q r s t v w x y z| + %w|ch ck|
-    end
-
-    def consonants
-      @@consonants ||= %w|a e i o u |
-    end
-
-    def alphabets
-      @@aplhabets ||= ('a'...'z').to_a
+    def suffix
+      @@suffixes[rand(@@suffixes.size)]
     end
   end
 end
