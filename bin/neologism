@@ -2,4 +2,4 @@
 
 require 'neologism'
 
-puts Neologism.generate.capitalize + ' ' + rand(10).times.map{ Neologism.generate }.join(' ') + '.'
+puts Neologism.generate
