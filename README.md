@@ -1,6 +1,6 @@
 # Neologism
 
-TODO: Write a gem description
+Generate neologism.
 
 ## Installation
 
@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ neogolism
+    inasiker
 
 ## Contributing
 
